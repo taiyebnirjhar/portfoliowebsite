@@ -1,23 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Header() {
+  const [toggleMenu, setToggleMenu] = useState(false);
+
+  const toggleHandler = () => {
+    setToggleMenu((prev) => !prev);
+  };
+
   return (
     <>
       <header className="l-header">
         <nav className="nav bd-grid">
-          <div className="nav__toggle" id="nav-toggle">
+          {/* nav-toggle >>  toggleMenu*/}
+          <div className="nav__toggle" id="nav-toggle" onClick={toggleHandler}>
             <i className="bx bx-menu"></i>
           </div>
 
           <div>
-            <a href="#" className="nav__logo">
+            <a href="/" className="nav__logo">
               Taiyeb Nirjhor
             </a>
           </div>
-
-          <div className="nav__menu" id="nav-menu">
-            <div className="nav__close" id="nav-close">
-              <i className="bx bx-x"></i>
+          {/* nav-menu >> navMenu*/}
+          <div
+            className={toggleMenu ? "show nav__menu" : "nav__menu"}
+            id="nav-menu"
+          >
+            {/* nav-close >> closeMenu*/}
+            <div className="nav__close" onClick={toggleHandler} id="nav-close">
+              <i className="bx bx-x text-white"></i>
             </div>
             <ul className="nav__list">
               <li className="nav__item">
