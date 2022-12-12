@@ -10,6 +10,8 @@ import rocket from "../../assets/img/rocket.json";
 import Resume from "../../assets/taiyeb_nirjhor_resume.pdf";
 
 function Main() {
+  const submitHandler = () => {};
+
   return (
     <>
       <main className="l-main">
@@ -453,28 +455,36 @@ function Main() {
           <h2 className="section-title">Get In Touch</h2>
 
           <div className="contact__container bd-grid">
-            <form action="" className="contact__form">
+            <form
+              action="https://formspree.io/f/xayajrpg"
+              method="post"
+              className="contact__form"
+              onSubmit={submitHandler}
+            >
               <div className="contact__inputs">
                 <input
                   type="text"
+                  name="name"
                   placeholder="Name"
                   className="contact__input"
                 />
                 <input
                   type="mail"
+                  name="email"
                   placeholder="Email"
                   className="contact__input"
                 />
               </div>
 
               <input
-                type="text"
-                placeholder="Project"
+                type="number"
+                name="phone"
+                placeholder="Phone"
                 className="contact__input"
               />
 
               <textarea
-                name=""
+                name="message"
                 id=""
                 cols="0"
                 rows="10"
